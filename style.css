@@ -2,47 +2,137 @@
   --bg:#0b0b0b;
   --fg:#e6e6e6;
   --muted:#9a9a9a;
+  --faint:#6f6f6f;
+  --line:#222;
+  --card:#0f0f0f;
+  --pad:24px;
 }
 
 html,body{
   margin:0;
   background:var(--bg);
   color:var(--fg);
-  font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
-  line-height:1.5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  line-height:1.55;
+  font-size:15px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 main{
-  max-width:720px;
-  margin:80px auto 120px;
-  padding:0 24px;
+  max-width: 760px;
+  margin: 72px auto 120px;
+  padding: 0 var(--pad);
 }
 
 a{
   color:var(--fg);
   text-decoration:none;
-  border-bottom:1px solid var(--muted);
+  border-bottom:1px solid var(--faint);
 }
-
-a:hover{
-  border-bottom-color:var(--fg);
-}
+a:hover{ border-bottom-color:var(--fg); }
 
 .lang{
-  margin-bottom:60px;
-  font-size:14px;
+  margin-bottom:48px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+header{
+  margin-bottom: 36px;
 }
 
 h1{
-  font-size:28px;
-  font-weight:500;
+  font-size: 30px;
+  font-weight: 550;
+  margin: 0 0 10px;
+  letter-spacing: 0.2px;
+}
+.subtitle{
+  color: var(--muted);
+  margin: 0;
+  max-width: 60ch;
+}
+
+h2{
+  font-size: 16px;
+  font-weight: 600;
+  margin: 44px 0 12px;
+  letter-spacing: 0.3px;
+}
+h3{
+  font-size: 14px;
+  font-weight: 600;
+  margin: 22px 0 10px;
+  color: var(--fg);
 }
 
 p{
-  margin:1.2em 0;
+  margin: 1.05em 0;
+  max-width: 72ch;
 }
 
+ul{
+  margin: 10px 0 0 0;
+  padding-left: 18px;
+  color: var(--fg);
+  max-width: 72ch;
+}
+li{ margin: 6px 0; }
+li::marker{ color: var(--muted); }
+
 .sep{
-  margin:40px 0;
-  border-top:1px solid #222;
+  margin: 42px 0;
+  border-top: 1px solid var(--line);
+}
+
+.small{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+kbd, code{
+  font-family: inherit;
+  font-size: 0.95em;
+  color: var(--fg);
+}
+
+.callout{
+  margin: 18px 0 0;
+  padding: 14px 14px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 10px;
+  max-width: 72ch;
+}
+.callout p{ margin: 0.7em 0; }
+.callout strong{ font-weight: 650; }
+
+hr{
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 40px 0;
+}
+
+nav{
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+nav a{
+  border-bottom: 1px solid transparent;
+  color: var(--muted);
+}
+nav a:hover{
+  color: var(--fg);
+  border-bottom-color: var(--line);
+}
+
+@media (max-width: 520px){
+  main{ margin-top: 46px; }
+  h1{ font-size: 26px; }
+  :root{ --pad: 18px; }
 }
